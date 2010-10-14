@@ -6,6 +6,8 @@ The most basic building block of my workflow: VIM configurations, tailored to ru
 ## Installation 
 I prefer to keep my .vimrc file and .gvimrc configuration files bundled with the rest of this directory.
 
+        ln -s ~/.hydrogen ~/.vim
+
 To keep .vimrc + .gvimrc inside this directory don't forget to symbolically link them:
 
         ln -s ~/.vim/.vimrc ~/.vimrc
