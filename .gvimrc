@@ -7,8 +7,8 @@
   "set transp=4
 
 " Dark
-  colorscheme inkpot
-  set transp=10
+  colorscheme ir_black
+  set transp=8
   
 " ---------------------------------------------------------------------------
 " Font
