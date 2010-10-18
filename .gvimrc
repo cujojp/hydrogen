@@ -8,7 +8,7 @@
 
 " Dark
   colorscheme ir_black
-  set transp=8
+  set transp=25
   
 " ---------------------------------------------------------------------------
 " Font
