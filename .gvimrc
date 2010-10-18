@@ -7,8 +7,8 @@
   "set transp=4
 
 " Dark
-  colorscheme ir_black
-  set transp=25
+  colorscheme molokai
+  set transp=3
   
 " ---------------------------------------------------------------------------
 " Font

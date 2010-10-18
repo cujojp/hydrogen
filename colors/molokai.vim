@@ -23,7 +23,7 @@ let g:colors_name="molokai"
 if exists("g:molokai_original")
     let s:molokai_original = g:molokai_original
 else
-    let s:molokai_original = 0
+    let s:molokai_original = 1
 endif
 
 
@@ -150,7 +150,7 @@ if &t_Co > 255
    hi FoldColumn      ctermfg=67  ctermbg=16
    hi Folded          ctermfg=67  ctermbg=16
    hi Function        ctermfg=118
-   hi Identifier      ctermfg=208
+   hi Identifier      ctermfg=208               cterm=none
    hi Ignore          ctermfg=244 ctermbg=232
    hi IncSearch       ctermfg=193 ctermbg=16
 
