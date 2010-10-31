@@ -30,6 +30,7 @@ set smarttab
 set nostartofline
 set noautowrite                              " don't write on :next
 set autoindent                               " auto indents the next new line
+set timeoutlen=500                           " shortens the lag time with using leader
 set smartindent
 set title
 set expandtab
@@ -45,8 +46,8 @@ set hlsearch                                 " turn on highlighted search
 set laststatus=2                             " always have the status bar visible
 set hidden                                   " allow movement to another buffer without saving the current one
 set clipboard+=unnamed                       " share clipboard
-set backupdir=~/.vim/backup                  " directory to place the backup files
-set directory=~/.vim/tmp                     " directory to place swap files in
+"set backupdir=~/.vim/backup                  " directory to place the backup files
+"set directory=~/.vim/tmp                     " directory to place swap files in
 set numberwidth=2                            " set the number width spacing
 set dictionary=/usr/share/dict/words         " more words
 set nobackup       
@@ -84,25 +85,22 @@ map <leader><space> zf
 map <leader><S-space> zo
 map <leader>n :NERDTree<CR>
 map <leader>q :NERDTreeClose<CR>
-map <leader>h <c-W>h
-map <leader>l <c-W>l
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
 map <leader>/ :noh<CR>
 map <leader>C :call MyConfigurationFiles()<CR>
 
 map K <nop>
-
 map H 0
 map L $
 map T <C-v>
-" Not recommended for everyone, but I've gotten quite used to it.
+" Not recommended for everyone, but I've gotten quite used to instead of jj
 imap <S-space> <Esc>
 
 " Alphabetize CSS
 nmap <F7> /{/+1<CR>vi{:sort<CR>
 
-" Source the vimrc and gvimrc at once
+" Source the .vimrc and .gvimrc at once
 nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 " ---------------------------------------------------------------------------
 " Plugins
