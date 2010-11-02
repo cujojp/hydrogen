@@ -83,8 +83,7 @@ let g:user_zen_expandabbr_key = '<leader>e'
 
 map <leader><space> zf
 map <leader><S-space> zo
-map <leader>n :NERDTree<CR>
-map <leader>q :NERDTreeClose<CR>
+map <leader>n :e.<CR>
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
 map <leader>/ :noh<CR>
