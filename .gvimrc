@@ -7,7 +7,7 @@
   "set transp=4
 
 " Dark
-  colorscheme molokai
+  colorscheme busybee
   set transp=3
   
 " ---------------------------------------------------------------------------

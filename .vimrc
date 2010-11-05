@@ -75,6 +75,14 @@ function! MyConfigurationFiles()
   execute ":vsplit ~/.zshrc"
 endfunction          
 
+function! KickbackMode()
+  execute ":set guifont=Inconsolata-dz:h17"
+endfunction
+
+function! KickbackModeOff()
+  execute ":set guifont=Inconsolata-dz:h13"
+endfunction
+
 " ---------------------------------------------------------------------------
 " Keymappings
 " ---------------------------------------------------------------------------
@@ -88,6 +96,8 @@ map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
 map <leader>/ :noh<CR>
 map <leader>C :call MyConfigurationFiles()<CR>
+map <leader>1 :call KickbackMode()<CR>
+map <leader>2 :call KickbackModeOff()<CR>
 
 map K <nop>
 map H 0
@@ -220,6 +230,7 @@ iab flase      false
 iab recrusive  recursive
 iab Recrusive  Recursive
 iab isze       size
+iab soze       size
 iab tooltop    tooltip
 iab tooltio    tooltip
 iab sned       send          
