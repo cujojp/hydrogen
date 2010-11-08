@@ -7,7 +7,7 @@
   "set transp=4
 
 " Dark
-  colorscheme busybee
+  colorscheme biogoo
   set transp=3
   
 " ---------------------------------------------------------------------------
