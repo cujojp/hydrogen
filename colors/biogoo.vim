@@ -88,7 +88,7 @@ hi SpellCap			guifg=#7f007f guibg=#f0f0f0 gui=undercurl guisp=#7f007f
 hi SpellLocal		guifg=#007f7f guibg=#f0f0f0 gui=undercurl guisp=#007f7f
 hi SpellRare		guifg=#b85d00 guibg=#f0f0f0 gui=undercurl guisp=#b85d00
 hi Statement		guifg=#00007f gui=none
-hi StatusLine		guifg=#00007f guibg=#ffffff
+hi StatusLine		guifg=#f3f53e guibg=#8c8d14
 hi StatusLineNC		guifg=#676767 guibg=#ffffff
 hi String			guifg=#d10000
 hi TabLine			guifg=#222222 guibg=#d6d6d6
