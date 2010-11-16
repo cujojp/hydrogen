@@ -108,6 +108,8 @@ map <leader>C :call MyConfigurationFiles()<CR>
 map <leader>1 :call KickbackMode()<CR>
 map <leader>2 :call KickbackModeOff()<CR>
 
+map <leader> ci
+
 map K <nop>
 map H 0
 map L $
@@ -249,3 +251,4 @@ iab tooltio    tooltip
 iab sned       send          
 iab tio        top
 iab hightlight highlight
+iab adress     address
