@@ -146,6 +146,10 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 " Don't use cindent for javascript
 autocmd FileType javascript setlocal nocindent
 
+au BufRead,BufNewFile *.css set ft=css syntax=css3
+au BufRead,BufNewFile *.html set ft=html syntax=html5
+au BufRead,BufNewFile *.json set ft=json syntax=javascript
+
 
 " ----------------------------------------------------------------------------
 " JavaScript
