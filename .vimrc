@@ -83,6 +83,11 @@ function! KickbackModeOff()
   execute ":set guifont=Inconsolata-dz:h13"
 endfunction
 
+function! DQC()
+  execute ":%s/color/colour/gc"
+  execute ":%s/flavor/flavour/gc"
+endfunction
+
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -107,9 +112,7 @@ map <leader>/ :noh<CR>
 map <leader>C :call MyConfigurationFiles()<CR>
 map <leader>1 :call KickbackMode()<CR>
 map <leader>2 :call KickbackModeOff()<CR>
-
-map <leader> ci
-
+map <leader><leader>C :call DQC()<CR>
 map K <nop>
 map H 0
 map L $
@@ -138,6 +141,9 @@ let NERDTreeHighlightCursorline=1 " Highlight the selected entry in the tree
 let NERDTreeMouseMode=2           " Use a single click to fold/unfold directories and a double click to open files
 let NERDChristmasTree=1           " More colorful
 let NERDTreeWinPos=0              " 0 for left aligned, 1 for right
+
+"cTags
+ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 " ----------------------------------------------------------------------------
 "  Auto Commands
 " ----------------------------------------------------------------------------
@@ -252,3 +258,4 @@ iab sned       send
 iab tio        top
 iab hightlight highlight
 iab adress     address
+iab ling       long
