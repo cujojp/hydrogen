@@ -30,7 +30,7 @@ set smarttab
 set nostartofline
 set noautowrite                              " don't write on :next
 set autoindent                               " auto indents the next new line
-set timeoutlen=500                           " shortens the lag time with using leader
+set timeoutlen=200                           " shortens the lag time with using leader
 set smartindent
 set title
 set expandtab
@@ -46,6 +46,7 @@ set hlsearch                                 " turn on highlighted search
 set laststatus=2                             " always have the status bar visible
 set hidden                                   " allow movement to another buffer without saving the current one
 set clipboard+=unnamed                       " share clipboard
+set fo-=r
 "set backupdir=~/.vim/backup                  " directory to place the backup files
 "set directory=~/.vim/tmp                     " directory to place swap files in
 set numberwidth=2                            " set the number width spacing
@@ -64,6 +65,7 @@ set statusline+=%=                           " right align
 set statusline+=%2*0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 set pastetoggle=<F2>
+
 
 " ---------------------------------------------------------------------------
 " Custom Functions
@@ -102,13 +104,15 @@ endfunc
 " ---------------------------------------------------------------------------
 let mapleader = ","
 let g:user_zen_expandabbr_key = '<leader>e'   
+let @i="f>a\n\n"
 
 map <leader><space> zf
 map <leader><S-space> zo
 map <leader>n :e.<CR>
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
-map <leader>/ :noh<CR>
+"map <leader>/ :noh<CR>
+map <leader>b :b#<CR>
 map <leader>C :call MyConfigurationFiles()<CR>
 map <leader>1 :call KickbackMode()<CR>
 map <leader>2 :call KickbackModeOff()<CR>
@@ -117,6 +121,9 @@ map K <nop>
 map H 0
 map L $
 map T <C-v>
+
+nnoremap <leader>/ :set hlsearch!<CR>
+
 " Not recommended for everyone, but I've gotten quite used to instead of jj
 imap <S-space> <Esc>
 
@@ -128,22 +135,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
-" NERDTree
-" Hide these filetypes
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-                    \ '\.o$', '\.so$', '\.egg$', '^\.git$', '\.DS_STORE', 
-                    \ '\.svn' ]
-
-let NERDTreeShowFiles=1           " Show hidden files, too
-let NERDTreeShowHidden=1
-let NERDTreeQuitOnOpen=0          
-let NERDTreeHighlightCursorline=1 " Highlight the selected entry in the tree
-let NERDTreeMouseMode=2           " Use a single click to fold/unfold directories and a double click to open files
-let NERDChristmasTree=1           " More colorful
-let NERDTreeWinPos=0              " 0 for left aligned, 1 for right
-
-"cTags
- map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 " ----------------------------------------------------------------------------
 "  Auto Commands
 " ----------------------------------------------------------------------------
@@ -158,31 +149,6 @@ au BufRead,BufNewFile *.css set ft=css syntax=css3
 au BufRead,BufNewFile *.html set ft=html syntax=html5
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
-
-" ----------------------------------------------------------------------------
-" JavaScript
-" ----------------------------------------------------------------------------
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
-au FileType javascript setl nocindent
-
-au FileType javascript imap <c-t> AJS.log();<esc>hi
-au FileType javascript imap <c-a> alert();<esc>hi
-
-au FileType javascript inoremap <buffer> $r return
-au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
-
-function! JavaScriptFold()
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-    return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-
 " ---------------------------------------------------------------------------
 " System
 " ---------------------------------------------------------------------------
@@ -191,7 +157,7 @@ if has('title') && (has('gui_running') || &title)
     set titlestring=
     set titlestring+=%f\                     " file name
     set titlestring+=%h%m%r%w                " flags
-    set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}        " working directory
+    set titlestring+=\ +---->\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}        " working directory
 endif    
 " ---------------------------------------------------------------------------
 " Autocorrections

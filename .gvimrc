@@ -7,14 +7,16 @@
   "set transp=4
 
 " Dark
+"liquid carbon, darktango
+  colorscheme tesla
   "colorscheme biogoo
-  colorscheme desertEx
-  set transp=3
+  set transp=7
   
 " ---------------------------------------------------------------------------
 " Font
 " ---------------------------------------------------------------------------
 set guifont=Inconsolata-dz:h14
+"set guifont=Menlo:h15
 " ---------------------------------------------------------------------------
 " GUI
 " ---------------------------------------------------------------------------
