@@ -148,6 +148,7 @@ autocmd FileType javascript setlocal nocindent
 au BufRead,BufNewFile *.css set ft=css syntax=css3
 au BufRead,BufNewFile *.html set ft=html syntax=html5
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
+au BufRead,BufNewFile *.scss set filetype=scss
 
 " ---------------------------------------------------------------------------
 " System
