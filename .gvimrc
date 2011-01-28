@@ -1,26 +1,32 @@
 " ---------------------------------------------------------------------------
 " Themes
 " ---------------------------------------------------------------------------
-" Light
+  set background=dark
 
+" Light
   "colorscheme bclear
   "set transp=4
 
 " Dark
-"liquid carbon, darktango
-  colorscheme tesla
-  "colorscheme biogoo
-  set transp=7
+"liquidcarbon, darktango
+  " For darker / morning conditions
+  "colorscheme  fu
+  " For Light / afternoon conditions
+  "colorscheme fokus-mod
+  "colorscheme liquidcarbon
+  colorscheme mophiaDark
+
+  set transp=9
   
 " ---------------------------------------------------------------------------
 " Font
 " ---------------------------------------------------------------------------
-set guifont=Inconsolata-dz:h14
-"set guifont=Menlo:h15
+"set guifont=Inconsolata-dz:h14.50
+set guifont=Monaco:h14
 " ---------------------------------------------------------------------------
 " GUI
 " ---------------------------------------------------------------------------
 set guioptions=egmtc 
 set showtabline=2 "2 enables tabs
 set antialias
-
+set fuoptions=maxvert,maxhorz

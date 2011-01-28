@@ -17,7 +17,7 @@ if exists('current_line') && current_line == 1
 endif
 
 " Syntax
-hi Comment guifg=#656763 guibg=#000000
+hi Comment guifg=#656763 
 hi Constant guifg=#c5013d
 hi Number guifg=#c5013d
 hi Statement guifg=#4962a9 gui=none

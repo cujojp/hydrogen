@@ -30,7 +30,7 @@ set smarttab
 set nostartofline
 set noautowrite                              " don't write on :next
 set autoindent                               " auto indents the next new line
-set timeoutlen=200                           " shortens the lag time with using leader
+set timeoutlen=400                           " shortens the lag time with using leader
 set smartindent
 set title
 set expandtab
@@ -111,7 +111,6 @@ map <leader><S-space> zo
 map <leader>n :e.<CR>
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
-"map <leader>/ :noh<CR>
 map <leader>b :b#<CR>
 map <leader>C :call MyConfigurationFiles()<CR>
 map <leader>1 :call KickbackMode()<CR>
@@ -122,9 +121,18 @@ map H 0
 map L $
 map T <C-v>
 
-nnoremap <leader>/ :set hlsearch!<CR>
+" window
+nmap <leader>sw<left>  :topleft  vnew<CR>
+nmap <leader>sw<right> :botright vnew<CR>
+nmap <leader>sw<up>    :topleft  new<CR>
+nmap <leader>sw<down>  :botright new<CR>
+" buffer
+nmap <leader>s<left>   :leftabove  vnew<CR>
+nmap <leader>s<right>  :rightbelow vnew<CR>
+nmap <leader>s<up>     :leftabove  new<CR>
+nmap <leader>s<down>   :rightbelow new<CR>
 
-" Not recommended for everyone, but I've gotten quite used to instead of jj
+nnoremap <leader>/ :set hlsearch!<CR>
 imap <S-space> <Esc>
 
 " Alphabetize CSS
@@ -135,6 +143,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
+let g:CommandTMaxHeight = 10
 " ----------------------------------------------------------------------------
 "  Auto Commands
 " ----------------------------------------------------------------------------
@@ -149,6 +158,7 @@ au BufRead,BufNewFile *.css set ft=css syntax=css3
 au BufRead,BufNewFile *.html set ft=html syntax=html5
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.as set filetype=actionscript
 
 " ---------------------------------------------------------------------------
 " System
@@ -158,7 +168,7 @@ if has('title') && (has('gui_running') || &title)
     set titlestring=
     set titlestring+=%f\                     " file name
     set titlestring+=%h%m%r%w                " flags
-    set titlestring+=\ +---->\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}        " working directory
+    set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}        " working directory
 endif    
 " ---------------------------------------------------------------------------
 " Autocorrections
