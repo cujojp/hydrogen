@@ -105,6 +105,8 @@ endfunc
 let mapleader = ","
 let g:user_zen_expandabbr_key = '<leader>e'   
 let @i="f>a\n\n"
+let @z="V%zf"
+let @a="V%zo"
 
 map <leader><space> zf
 map <leader><S-space> zo
@@ -140,10 +142,17 @@ nmap <F7> /{/+1<CR>vi{:sort<CR>
 
 " Source the .vimrc and .gvimrc at once
 nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
+
+" CTags
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
 let g:CommandTMaxHeight = 10
+
+let Tlist_Ctags_Cmd = "/usr/local/Cellar/ctags"
+let Tlist_WinWidth = 30
+
 " ----------------------------------------------------------------------------
 "  Auto Commands
 " ----------------------------------------------------------------------------
@@ -236,3 +245,6 @@ iab tio        top
 iab hightlight highlight
 iab adress     address
 iab ling       long
+iab lavel      label
+iab sleect     select
+iab slelect    select

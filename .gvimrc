@@ -13,8 +13,8 @@
   "colorscheme  fu
   " For Light / afternoon conditions
   "colorscheme fokus-mod
-  "colorscheme liquidcarbon
-  colorscheme mophiaDark
+  colorscheme night
+  hi Normal guibg=#202030    
 
   set transp=9
   
