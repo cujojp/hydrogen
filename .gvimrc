@@ -8,15 +8,10 @@
   "set transp=4
 
 " Dark
-"liquidcarbon, darktango
-  " For darker / morning conditions
-  "colorscheme  fu
-  " For Light / afternoon conditions
-  "colorscheme fokus-mod
-  colorscheme night
-  hi Normal guibg=#202030    
-
-  set transp=9
+  "colorscheme night
+  colorscheme fine_blue
+  "hi Normal guibg=#202030    
+  set transp=10
   
 " ---------------------------------------------------------------------------
 " Font

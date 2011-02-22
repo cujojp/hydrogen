@@ -30,7 +30,7 @@ set smarttab
 set nostartofline
 set noautowrite                              " don't write on :next
 set autoindent                               " auto indents the next new line
-set timeoutlen=400                           " shortens the lag time with using leader
+set timeoutlen=500                           " shortens the lag time with using leader
 set smartindent
 set title
 set expandtab
@@ -75,6 +75,7 @@ function! MyConfigurationFiles()
   execute ":e ~/.vimrc"
   execute ":vsplit ~/.gvimrc"
   execute ":vsplit ~/.zshrc"
+  execute ":colo borland"
 endfunction          
 
 function! KickbackMode()
@@ -134,6 +135,7 @@ nmap <leader>s<right>  :rightbelow vnew<CR>
 nmap <leader>s<up>     :leftabove  new<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
 
+
 nnoremap <leader>/ :set hlsearch!<CR>
 imap <S-space> <Esc>
 
@@ -148,10 +150,12 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
+" Command-T
 let g:CommandTMaxHeight = 10
 
-let Tlist_Ctags_Cmd = "/usr/local/Cellar/ctags"
-let Tlist_WinWidth = 30
+" Buftabs for the quick
+noremap <A-left> :bprev<CR>
+noremap <A-right> :bnext<CR>
 
 " ----------------------------------------------------------------------------
 "  Auto Commands
@@ -248,3 +252,26 @@ iab ling       long
 iab lavel      label
 iab sleect     select
 iab slelect    select
+iab ident      indent
+
+" VUNDLE CONFIG
+
+ set rtp+=~/.vim/vundle.git/ 
+ call vundle#rc()
+
+ " Programming
+ Bundle "jQuery"
+ 
+ Bundle "ack.vim"
+ Bundle "git://git.wincent.com/command-t.git"
+ " (HT|X)ml tool
+ Bundle "ragtag.vim"
+
+ " Utility
+ Bundle "repeat.vim"
+ Bundle "surround.vim"
+ Bundle "file-line"
+ Bundle "SuperTab"
+ Bundle "Align"
+ Bundle "taglist"
+ Bundle "https://github.com/vim-scripts/Quotes--Dimitrov.git"
