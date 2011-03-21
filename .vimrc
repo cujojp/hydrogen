@@ -10,9 +10,11 @@ if has("autocmd")
         \   exe "normal! g`\"" |
         \ endif
 endif
+
 if &t_Co > 2 || has("gui_running")
   syntax on
 endif
+
 " ---------------------------------------------------------------------------
 " General
 " ---------------------------------------------------------------------------
@@ -47,11 +49,11 @@ set laststatus=2                             " always have the status bar visibl
 set hidden                                   " allow movement to another buffer without saving the current one
 set clipboard+=unnamed                       " share clipboard
 set fo-=r
+set nobackup       
 "set backupdir=~/.vim/backup                  " directory to place the backup files
 "set directory=~/.vim/tmp                     " directory to place swap files in
 set numberwidth=2                            " set the number width spacing
 set dictionary=/usr/share/dict/words         " more words
-set nobackup       
 set nowritebackup  
 set noswapfile     
 set statusline=
@@ -66,7 +68,6 @@ set statusline+=%2*0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 set pastetoggle=<F2>
 
-
 " ---------------------------------------------------------------------------
 " Custom Functions
 " ---------------------------------------------------------------------------
@@ -75,21 +76,7 @@ function! MyConfigurationFiles()
   execute ":e ~/.vimrc"
   execute ":vsplit ~/.gvimrc"
   execute ":vsplit ~/.zshrc"
-  execute ":colo borland"
 endfunction          
-
-function! KickbackMode()
-  execute ":set guifont=Inconsolata-dz:h17"
-endfunction
-
-function! KickbackModeOff()
-  execute ":set guifont=Inconsolata-dz:h13"
-endfunction
-
-function! DQC()
-  execute ":%s/color/colour/gc"
-  execute ":%s/flavor/flavour/gc"
-endfunction
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -105,9 +92,6 @@ endfunc
 " ---------------------------------------------------------------------------
 let mapleader = ","
 let g:user_zen_expandabbr_key = '<leader>e'   
-let @i="f>a\n\n"
-let @z="V%zf"
-let @a="V%zo"
 
 map <leader><space> zf
 map <leader><S-space> zo
@@ -115,10 +99,8 @@ map <leader>n :e.<CR>
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
 map <leader>b :b#<CR>
+map <leader>cc <leader>c<space>
 map <leader>C :call MyConfigurationFiles()<CR>
-map <leader>1 :call KickbackMode()<CR>
-map <leader>2 :call KickbackModeOff()<CR>
-map <leader><leader>C :call DQC()<CR>
 map K <nop>
 map H 0
 map L $
@@ -135,7 +117,6 @@ nmap <leader>s<right>  :rightbelow vnew<CR>
 nmap <leader>s<up>     :leftabove  new<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
 
-
 nnoremap <leader>/ :set hlsearch!<CR>
 imap <S-space> <Esc>
 
@@ -145,8 +126,28 @@ nmap <F7> /{/+1<CR>vi{:sort<CR>
 " Source the .vimrc and .gvimrc at once
 nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 
-" CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+" ---------------------------------------------------------------------------
+" Vundle package management
+" ---------------------------------------------------------------------------
+ set rtp+=~/.vim/vundle.git/ 
+ call vundle#rc()
+
+ Bundle "jQuery"
+ Bundle "ack.vim"
+ Bundle "ragtag.vim"
+ Bundle "AutoClose"
+ Bundle "repeat.vim"
+ Bundle "surround.vim"
+ Bundle "file-line"
+ Bundle "SuperTab"
+ Bundle "Align"
+ Bundle "taglist"
+ Bundle "git://git.wincent.com/command-t.git"
+ Bundle "https://github.com/mattn/zencoding-vim.git"
+ Bundle "https://github.com/scrooloose/nerdcommenter.git"
+ Bundle "https://github.com/vim-scripts/bufexplorer.zip.git"
+ Bundle "https://github.com/vim-scripts/matchit.zip.git"
+
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
@@ -183,6 +184,7 @@ if has('title') && (has('gui_running') || &title)
     set titlestring+=%h%m%r%w                " flags
     set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}        " working directory
 endif    
+
 " ---------------------------------------------------------------------------
 " Autocorrections
 " ---------------------------------------------------------------------------
@@ -253,25 +255,5 @@ iab lavel      label
 iab sleect     select
 iab slelect    select
 iab ident      indent
+iab vind       bind
 
-" VUNDLE CONFIG
-
- set rtp+=~/.vim/vundle.git/ 
- call vundle#rc()
-
- " Programming
- Bundle "jQuery"
- 
- Bundle "ack.vim"
- Bundle "git://git.wincent.com/command-t.git"
- " (HT|X)ml tool
- Bundle "ragtag.vim"
-
- " Utility
- Bundle "repeat.vim"
- Bundle "surround.vim"
- Bundle "file-line"
- Bundle "SuperTab"
- Bundle "Align"
- Bundle "taglist"
- Bundle "https://github.com/vim-scripts/Quotes--Dimitrov.git"
