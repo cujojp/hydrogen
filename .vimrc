@@ -99,7 +99,6 @@ map <leader>n :e.<CR>
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
 map <leader>b :b#<CR>
-map <leader>cc <leader>c<space>
 map <leader>C :call MyConfigurationFiles()<CR>
 map K <nop>
 map H 0
