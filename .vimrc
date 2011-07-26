@@ -105,6 +105,9 @@ map H 0
 map L $
 map T <C-v>
 
+" yank to end of line, like D
+map Y y$
+
 " window
 nmap <leader>sw<left>  :topleft  vnew<CR>
 nmap <leader>sw<right> :botright vnew<CR>
@@ -118,9 +121,6 @@ nmap <leader>s<down>   :rightbelow new<CR>
 
 nnoremap <leader>/ :set hlsearch!<CR>
 imap <S-space> <Esc>
-
-" Alphabetize CSS
-nmap <F7> /{/+1<CR>vi{:sort<CR>
 
 " Source the .vimrc and .gvimrc at once
 nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
