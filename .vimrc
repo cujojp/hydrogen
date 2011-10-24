@@ -87,6 +87,53 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+" http://www.gregsexton.org/2011/04/enhancing-window-movement-and-positioning-in-vim/
+function! PasteWindow(direction) "{{{
+    if exists("g:yanked_buffer")
+        if a:direction == 'edit'
+            let temp_buffer = bufnr('%')
+        endif
+
+        exec a:direction . " +buffer" . g:yanked_buffer
+
+        if a:direction == 'edit'
+            let g:yanked_buffer = temp_buffer
+        endif
+    endif
+endf "}}}
+
+"yank/paste buffers
+:nmap <silent> <leader>wy  :let g:yanked_buffer=bufnr('%')<cr>
+:nmap <silent> <leader>wd  :let g:yanked_buffer=bufnr('%')<cr>:q<cr>
+:nmap <silent> <leader>wp :call PasteWindow('edit')<cr>
+:nmap <silent> <leader>ws :call PasteWindow('split')<cr>
+:nmap <silent> <leader>wv :call PasteWindow('vsplit')<cr>
+:nmap <silent> <leader>wt :call PasteWindow('tabnew')<cr>
+
+
+" Displays the output of a shell command into a buffer
+" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+     if part[0] =~ '\v[%#<]'
+        let expanded_part = fnameescape(expand(part))
+        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+     endif
+  endfor
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:    ' . a:cmdline)
+  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
+endfunction
+
+
 " ---------------------------------------------------------------------------
 " Keymappings
 " ---------------------------------------------------------------------------
@@ -172,6 +219,7 @@ au BufRead,BufNewFile *.html set ft=html syntax=html5
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.as set filetype=actionscript
+au BufRead,BufNewFile *.aspx set filetype=html5
 
 " ---------------------------------------------------------------------------
 " System
