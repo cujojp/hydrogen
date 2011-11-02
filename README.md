@@ -18,3 +18,9 @@ Since .vimrc file and .gvimrc configuration files are bundled with the rest of t
 
         ln -s ~/.vim/.vimrc ~/.vimrc
         ln -s ~/.vim/.gvimrc ~/.gvimrc
+
+## Next Steps
+
+When MacVim is running, make sure to run Vundle to grab all the plugins.
+
+        :BundleInstall

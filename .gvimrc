@@ -2,6 +2,10 @@
 " Themes                                                                   -
 " --------------------------------------------------------------------------
 
+"overriding the themes default guibg
+"set background=dark
+"hi Normal guibg=#202030    
+
 "...................................
 "Light Theme                       .
 "...................................
@@ -15,14 +19,6 @@
 set background=light
 set transp=4
 colorscheme light2011
-
-"set background=dark
-"set transp=8
-"colorscheme ambient-mod
-
-"overriding the themes default guibg
-"set background=dark
-"hi Normal guibg=#202030    
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -

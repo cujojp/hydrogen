@@ -50,8 +50,6 @@ set hidden                                   " allow movement to another buffer 
 set clipboard+=unnamed                       " share clipboard
 set fo-=r
 set nobackup       
-"set backupdir=~/.vim/backup                  " directory to place the backup files
-"set directory=~/.vim/tmp                     " directory to place swap files in
 set numberwidth=2                            " set the number width spacing
 set dictionary=/usr/share/dict/words         " more words
 set nowritebackup  
@@ -78,39 +76,6 @@ function! MyConfigurationFiles()
   execute ":vsplit ~/.zshrc"
 endfunction          
 
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-" http://www.gregsexton.org/2011/04/enhancing-window-movement-and-positioning-in-vim/
-function! PasteWindow(direction) "{{{
-    if exists("g:yanked_buffer")
-        if a:direction == 'edit'
-            let temp_buffer = bufnr('%')
-        endif
-
-        exec a:direction . " +buffer" . g:yanked_buffer
-
-        if a:direction == 'edit'
-            let g:yanked_buffer = temp_buffer
-        endif
-    endif
-endf "}}}
-
-"yank/paste buffers
-:nmap <silent> <leader>wy  :let g:yanked_buffer=bufnr('%')<cr>
-:nmap <silent> <leader>wd  :let g:yanked_buffer=bufnr('%')<cr>:q<cr>
-:nmap <silent> <leader>wp :call PasteWindow('edit')<cr>
-:nmap <silent> <leader>ws :call PasteWindow('split')<cr>
-:nmap <silent> <leader>wv :call PasteWindow('vsplit')<cr>
-:nmap <silent> <leader>wt :call PasteWindow('tabnew')<cr>
-
-
 " Displays the output of a shell command into a buffer
 " http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
@@ -133,12 +98,14 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
-
 " ---------------------------------------------------------------------------
 " Keymappings
 " ---------------------------------------------------------------------------
 let mapleader = ","
 let g:user_zen_expandabbr_key = '<leader>e'   
+
+" Source the .vimrc and .gvimrc at once
+nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 
 map <leader><space> zf
 map <leader><S-space> zo
@@ -151,9 +118,8 @@ map K <nop>
 map H 0
 map L $
 map T <C-v>
-
-" yank to end of line, like D
-map Y y$
+imap <S-space> <Esc>
+nnoremap <leader>/ :set hlsearch!<CR>
 
 " window
 nmap <leader>sw<left>  :topleft  vnew<CR>
@@ -165,12 +131,6 @@ nmap <leader>s<left>   :leftabove  vnew<CR>
 nmap <leader>s<right>  :rightbelow vnew<CR>
 nmap <leader>s<up>     :leftabove  new<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
-
-nnoremap <leader>/ :set hlsearch!<CR>
-imap <S-space> <Esc>
-
-" Source the .vimrc and .gvimrc at once
-nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 
 " ---------------------------------------------------------------------------
 " Vundle package management
@@ -224,7 +184,6 @@ au BufRead,BufNewFile *.aspx set filetype=html5
 " ---------------------------------------------------------------------------
 " System
 " ---------------------------------------------------------------------------
-" Nice window title
 if has('title') && (has('gui_running') || &title)
     set titlestring=
     set titlestring+=%f\                     " file name
@@ -303,4 +262,3 @@ iab sleect     select
 iab slelect    select
 iab ident      indent
 iab vind       bind
-
