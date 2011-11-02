@@ -1,21 +1,20 @@
 Hydrogen: Vim configuration
 =======
 
-The most basic building block of my workflow: VIM configurations, tailored to run on top of the latest [MacVim](http://github.com/b4winckler/macvim/downloads) snapshot. 
+The basic building block of my workflow: VIM configurations, tailored to run on top of the latest [MacVim](http://github.com/b4winckler/macvim/downloads) snapshot. 
 
 ## Installation 
 
-Remember to link the folders accordingly so vim knows where to load the configuration files.
+If you want to follow the linking directions below make sure to clone this directory in your root:
+
+        cd ~/
+        git clone https://github.com/lrbecker/hydrogen.git
+
+Symbolically linking the folders makes setup much easier, then Vim knows where to load the configuration files. You can also move the files into `.vim` if you prefer.
 
         ln -s ~/.hydrogen ~/.vim
 
-I prefer to keep my .vimrc file and .gvimrc configuration files bundled with the rest of this directory. To keep .vimrc + .gvimrc inside this directory don't forget to symbolically link them:
+Since .vimrc file and .gvimrc configuration files are bundled with the rest of this directory. We need to link them as well.
 
         ln -s ~/.vim/.vimrc ~/.vimrc
         ln -s ~/.vim/.gvimrc ~/.gvimrc
-
-Or move them to the normal location:
-
-        mv .vimrc ~/.vimrc
-        mv .gvimrc ~/.gvimrc
-
