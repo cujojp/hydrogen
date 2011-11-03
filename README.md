@@ -9,6 +9,7 @@ If you want to follow the linking directions below make sure to clone this direc
 
         cd ~/
         git clone https://github.com/lrbecker/hydrogen.git
+        mv hydrogen .hydrogen
 
 Symbolically linking the folders makes setup much easier, then Vim knows where to load the configuration files. You can also move the files into `.vim` if you prefer.
 
