@@ -142,9 +142,6 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-Bundle "jQuery"
-Bundle "ack.vim"
-Bundle "L9"
 Bundle "ragtag.vim"
 Bundle "AutoClose"
 Bundle "repeat.vim"
@@ -152,8 +149,6 @@ Bundle "surround.vim"
 Bundle "file-line"
 Bundle "SuperTab"
 Bundle "Align"
-Bundle "taglist"
-Bundle "git://git.wincent.com/command-t.git"
 Bundle "https://github.com/mattn/zencoding-vim.git"
 Bundle "https://github.com/scrooloose/nerdcommenter.git"
 Bundle "https://github.com/vim-scripts/bufexplorer.zip.git"
