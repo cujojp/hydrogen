@@ -5,15 +5,8 @@ The basic building block of my workflow: VIM configurations, tailored to run on 
 
 ## Installation 
 
-If you want to follow the linking directions below make sure to clone this directory in your root:
+        git clone https://github.com/lrbecker/hydrogen.git ~/.vim
 
-        cd ~/
-        git clone https://github.com/lrbecker/hydrogen.git
-        mv hydrogen .hydrogen
-
-Symbolically linking the folders makes setup much easier, then Vim knows where to load the configuration files. You can also move the files into `.vim` if you prefer.
-
-        ln -s ~/.hydrogen ~/.vim
 
 Since .vimrc file and .gvimrc configuration files are bundled with the rest of this directory. We need to link them as well.
 
