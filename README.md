@@ -5,13 +5,13 @@ The basic building block of my workflow: VIM configurations, tailored to run on 
 
 ## Installation 
 
-        git clone https://github.com/lrbecker/hydrogen.git ~/.vim
+First clone the project
 
+        $> git clone https://github.com/lrbecker/hydrogen.git ~/.vim
 
-Since .vimrc file and .gvimrc configuration files are bundled with the rest of this directory. We need to link them as well.
+Navigate inside .vim and then run the rake tool which will link the .vimrc and .gvimrc files
 
-        ln -s ~/.vim/.vimrc ~/.vimrc
-        ln -s ~/.vim/.gvimrc ~/.gvimrc
+        $> rake build
 
 ## Next Steps
 
