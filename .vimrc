@@ -70,39 +70,18 @@ set pastetoggle=<F2>
 " Custom Functions
 " ---------------------------------------------------------------------------
 " Loads up and splits my most commonly edited configuration files
-function! MyConfigurationFiles()
+function! OpenConfig()
   execute ":e ~/.vimrc"
   execute ":vsplit ~/.gvimrc"
   execute ":vsplit ~/.zshrc"
 endfunction          
 
-" Displays the output of a shell command into a buffer
-" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
-function! s:RunShellCommand(cmdline)
-  echo a:cmdline
-  let expanded_cmdline = a:cmdline
-  for part in split(a:cmdline, ' ')
-     if part[0] =~ '\v[%#<]'
-        let expanded_part = fnameescape(expand(part))
-        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-     endif
-  endfor
-  botright new
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  call setline(1, 'You entered:    ' . a:cmdline)
-  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-  call setline(3,substitute(getline(2),'.','=','g'))
-  execute '$read !'. expanded_cmdline
-  setlocal nomodifiable
-  1
-endfunction
-
 " ---------------------------------------------------------------------------
 " Keymappings
 " ---------------------------------------------------------------------------
 let mapleader = ","
-let g:user_zen_expandabbr_key = '<leader>e'   
+"let g:user_zen_expandabbr_key = '<leader>e'   
+let g:sparkupExecuteMapping = '<leader>e'
 
 " Source the .vimrc and .gvimrc at once
 nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
@@ -112,8 +91,7 @@ map <leader><S-space> zo
 map <leader>n :e.<CR>
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
-map <leader>b :b#<CR>
-map <leader>C :call MyConfigurationFiles()<CR>
+map <leader>C :call OpenConfig()<CR>
 map K <nop>
 map H 0
 map L $
@@ -135,6 +113,8 @@ nmap <leader>s<down>   :rightbelow new<CR>
 " ---------------------------------------------------------------------------
 " Vundle package management
 " ---------------------------------------------------------------------------
+filetype off
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -142,27 +122,40 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+" Movement
 Bundle "ragtag.vim"
 Bundle "AutoClose"
 Bundle "repeat.vim"
 Bundle "surround.vim"
-Bundle "file-line"
-Bundle "SuperTab"
-Bundle "Align"
-Bundle "https://github.com/mattn/zencoding-vim.git"
-Bundle "https://github.com/scrooloose/nerdcommenter.git"
 Bundle "https://github.com/vim-scripts/bufexplorer.zip.git"
+
+" UI Enhancements 
+Bundle 'mutewinter/vim-indent-guides'
+Bundle 'dickeytk/status.vim'
+" Browser
+Bundle 'mkitt/browser-refresh.vim'
+
+" HTML
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle "https://github.com/scrooloose/nerdcommenter.git"
 Bundle "https://github.com/vim-scripts/matchit.zip.git"
+
+" Language Bonus
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'leshill/vim-json'
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'itspriddle/vim-jquery'
+
+" Libraries
+Bundle 'L9'
+Bundle 'tpope/vim-repeat'
+
+filetype plugin indent on
 
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
-" Command-T
-let g:CommandTMaxHeight = 10
-
-" Buftabs for the quick
-noremap <A-left> :bprev<CR>
-noremap <A-right> :bnext<CR>
 
 " ----------------------------------------------------------------------------
 "  Auto Commands
@@ -171,15 +164,10 @@ noremap <A-right> :bnext<CR>
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal g'\"" | endif
 
-" Don't use cindent for javascript
-autocmd FileType javascript setlocal nocindent
-
 au BufRead,BufNewFile *.css set ft=css syntax=css3
 au BufRead,BufNewFile *.html set ft=html syntax=html5
-au BufRead,BufNewFile *.json set ft=json syntax=javascript
 au BufRead,BufNewFile *.scss set filetype=scss
-au BufRead,BufNewFile *.as set filetype=actionscript
-au BufRead,BufNewFile *.aspx set filetype=html5
+au BufRead,BufNewFile *.aspx set filetype=html syntax=html5
 
 " ---------------------------------------------------------------------------
 " System

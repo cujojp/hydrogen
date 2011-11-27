@@ -18,7 +18,7 @@
 "...................................
 set background=light
 set transp=4
-colorscheme light2011
+colorscheme fine_blue
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -
