@@ -132,8 +132,7 @@ Bundle "https://github.com/vim-scripts/bufexplorer.zip.git"
 " UI Enhancements 
 Bundle 'mutewinter/vim-indent-guides'
 Bundle 'dickeytk/status.vim'
-" Browser
-Bundle 'mkitt/browser-refresh.vim'
+Bundle 'https://github.com/scrooloose/syntastic.git'
 
 " HTML
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
