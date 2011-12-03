@@ -110,6 +110,10 @@ nmap <leader>s<right>  :rightbelow vnew<CR>
 nmap <leader>s<up>     :leftabove  new<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
 
+" CTags
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <C-\> :tnext<CR>
+
 " ---------------------------------------------------------------------------
 " Vundle package management
 " ---------------------------------------------------------------------------
@@ -145,6 +149,9 @@ Bundle 'leshill/vim-json'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'itspriddle/vim-jquery'
+
+" Ctags
+Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 
 " Libraries
 Bundle 'L9'
