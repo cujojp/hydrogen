@@ -1,7 +1,7 @@
 " ---------------------------------------------------------------------------
 " Base
 " ---------------------------------------------------------------------------
-set nocompatible                             " no vi compatibility 
+set nocompatible                             " no vi compatibility
 
 if has("autocmd")
   filetype plugin indent on
@@ -19,9 +19,9 @@ endif
 " General
 " ---------------------------------------------------------------------------
 set modelines=0
-set ruler                                    " show position in file   
-set number                                   " show line numbers  
-set history=1000                             " limit :cmdline history   
+set ruler                                    " show position in file
+set number                                   " show line numbers
+set history=1000                             " limit :cmdline history
 set novisualbell                             " no blinking .
 set nowrap                                   " no carriage returns
 set noerrorbells                             " no noise.
@@ -39,21 +39,21 @@ set expandtab
 set lz                                       " lazy redraw - when macros are running don't redraw
 set backspace=start,indent
 set virtualedit=all
-set backspace=2                              " make backspace work the way it should   
-set whichwrap+=<,>,h,l                       " make backspace and cursor keys wrap accordingly  
-set incsearch                                " set search to automatically show the next match while typing 
-set ignorecase                               " make searches case-insensitive   
-set cursorline                               " turn on line highlighting                                                        
-set hlsearch                                 " turn on highlighted search     
+set backspace=2                              " make backspace work the way it should
+set whichwrap+=<,>,h,l                       " make backspace and cursor keys wrap accordingly
+set incsearch                                " set search to automatically show the next match while typing
+set ignorecase                               " make searches case-insensitive
+set cursorline                               " turn on line highlighting
+set hlsearch                                 " turn on highlighted search
 set laststatus=2                             " always have the status bar visible
 set hidden                                   " allow movement to another buffer without saving the current one
 set clipboard+=unnamed                       " share clipboard
 set fo-=r
-set nobackup       
+set nobackup
 set numberwidth=2                            " set the number width spacing
 set dictionary=/usr/share/dict/words         " more words
-set nowritebackup  
-set noswapfile     
+set nowritebackup
+set noswapfile
 set statusline=
 set statusline+=%2*%-3.3n%0*\                " buffer number
 set statusline+=%f\                          " file name
@@ -74,13 +74,21 @@ function! OpenConfig()
   execute ":e ~/.vimrc"
   execute ":vsplit ~/.gvimrc"
   execute ":vsplit ~/.zshrc"
-endfunction          
+endfunction
+
+" Strip trailing whitespace (,ss)
+function! StripWhitespace()
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :%s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
+endfunction
 
 " ---------------------------------------------------------------------------
 " Keymappings
 " ---------------------------------------------------------------------------
 let mapleader = ","
-"let g:user_zen_expandabbr_key = '<leader>e'   
 let g:sparkupExecuteMapping = '<leader>e'
 
 " Source the .vimrc and .gvimrc at once
@@ -97,7 +105,9 @@ map H 0
 map L $
 map T <C-v>
 imap <S-space> <Esc>
+
 nnoremap <leader>/ :set hlsearch!<CR>
+noremap <leader>ss :call StripWhitespace()<CR>
 
 " window
 nmap <leader>sw<left>  :topleft  vnew<CR>
@@ -123,27 +133,27 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
 Bundle 'gmarik/vundle'
+
+" System
+Bundle 'git://git.wincent.com/command-t.git'
+
+" Libraries
+Bundle 'L9' 
 
 " Movement
 Bundle "ragtag.vim"
 Bundle "AutoClose"
 Bundle "repeat.vim"
 Bundle "surround.vim"
-Bundle "https://github.com/vim-scripts/bufexplorer.zip.git"
-
-" UI Enhancements 
-Bundle 'mutewinter/vim-indent-guides'
-Bundle 'dickeytk/status.vim'
-Bundle 'https://github.com/scrooloose/syntastic.git'
+Bundle "bufexplorer.zip"
 
 " HTML
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle "https://github.com/scrooloose/nerdcommenter.git"
 Bundle "https://github.com/vim-scripts/matchit.zip.git"
 
-" Language Bonus
+" Syntax
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'leshill/vim-json'
 Bundle 'pangloss/vim-javascript'
@@ -153,15 +163,24 @@ Bundle 'itspriddle/vim-jquery'
 " Ctags
 Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 
-" Libraries
-Bundle 'L9'
-Bundle 'tpope/vim-repeat'
+" Git
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
+
+" source: http://mislav.uniqpath.com/2011/12/vim-revisited/
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 " ----------------------------------------------------------------------------
 "  Auto Commands
@@ -179,11 +198,11 @@ au BufRead,BufNewFile *.aspx set filetype=html syntax=html5
 " System
 " ---------------------------------------------------------------------------
 if has('title') && (has('gui_running') || &title)
-    set titlestring=
-    set titlestring+=%f\                     " file name
-    set titlestring+=%h%m%r%w                " flags
-    set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}        " working directory
-endif    
+  set titlestring=
+  set titlestring+=%f\       " file name
+  set titlestring+=%h%m%r%w  " flags
+  set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " working directory
+endif
 
 " ---------------------------------------------------------------------------
 " Autocorrections
@@ -246,7 +265,7 @@ iab isze       size
 iab soze       size
 iab tooltop    tooltip
 iab tooltio    tooltip
-iab sned       send          
+iab sned       send
 iab tio        top
 iab hightlight highlight
 iab adress     address

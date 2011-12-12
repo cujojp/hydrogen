@@ -6,19 +6,9 @@
 "set background=dark
 "hi Normal guibg=#202030    
 
-"...................................
-"Light Theme                       .
-"...................................
-"set background=light
-"set transp=8
-"colorscheme fine_blue2
-  
-"...................................
-"Dark Theme                        .
-"...................................
 set background=light
-set transp=4
-colorscheme fine_blue
+set transp=2
+colorscheme solarized
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -
