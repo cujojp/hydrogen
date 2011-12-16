@@ -159,6 +159,7 @@ Bundle 'leshill/vim-json'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'itspriddle/vim-jquery'
+Bundle 'bbommarito/vim-slim.git'
 
 " Ctags
 Bundle 'https://github.com/vim-scripts/taglist.vim.git'

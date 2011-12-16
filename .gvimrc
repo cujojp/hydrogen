@@ -8,7 +8,7 @@
 
 set background=light
 set transp=2
-colorscheme solarized
+colorscheme hemisu
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -
