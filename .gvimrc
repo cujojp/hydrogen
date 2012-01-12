@@ -6,9 +6,10 @@
 "set background=dark
 "hi Normal guibg=#202030    
 
-set background=light
-set transp=2
-colorscheme hemisu
+set background=dark
+set transp=7
+"colorscheme hemisu
+colorscheme darkrobot
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -
