@@ -8,8 +8,8 @@
 
 set background=light
 set transp=5
-"colorscheme newspaper
-colorscheme whitebox
+colorscheme eddie
+"colorscheme biogoo
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -

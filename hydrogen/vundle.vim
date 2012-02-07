@@ -7,10 +7,12 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+"Bundle 'gmarik/vundle'
 
 " System
 Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'https://github.com/molok/vim-smartusline'
+Bundle 'https://github.com/greyblake/vim-preview.git'
 
 " Libraries
 Bundle 'L9' 
@@ -41,6 +43,7 @@ Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 " Git
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
+
 
 filetype plugin indent on
 
