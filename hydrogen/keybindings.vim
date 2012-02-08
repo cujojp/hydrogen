@@ -22,6 +22,10 @@ imap <S-space> <Esc>
 nnoremap <leader>/ :set hlsearch!<CR>
 noremap <leader>ss :call StripWhitespace()<CR>
 
+" delete char without yank 
+noremap x "_x
+noremap X "_X
+
 " window
 nmap <leader>sw<left>  :topleft  vnew<CR>
 nmap <leader>sw<right> :botright vnew<CR>

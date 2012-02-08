@@ -62,7 +62,7 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal g'\"" | endif
 
 au BufRead,BufNewFile *.css set ft=css syntax=css3
-au BufRead,BufNewFile *.html set ft=html syntax=html5
+au BufRead,BufNewFile *.{html,aspx,master,cshtml} set ft=html syntax=html5
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.aspx set filetype=html syntax=html5
 

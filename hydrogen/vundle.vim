@@ -13,6 +13,7 @@ call vundle#rc()
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/molok/vim-smartusline'
 Bundle 'https://github.com/greyblake/vim-preview.git'
+Bundle 'https://github.com/ervandew/supertab.git'
 
 " Libraries
 Bundle 'L9' 
