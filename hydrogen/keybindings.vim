@@ -19,18 +19,34 @@ map L $
 map T <C-v>
 imap <S-space> <Esc>
 
+" remove windows character returns
+map <Leader>m :%s/^M//<CR>
+
 nnoremap <leader>/ :set hlsearch!<CR>
 noremap <leader>ss :call StripWhitespace()<CR>
+
+" better j/k overwrapped lines
+nnoremap j gj
+nnoremap k gk
 
 " delete char without yank 
 noremap x "_x
 noremap X "_X
+
+" keep search results in the center of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
 
 " window
 nmap <leader>sw<left>  :topleft  vnew<CR>
 nmap <leader>sw<right> :botright vnew<CR>
 nmap <leader>sw<up>    :topleft  new<CR>
 nmap <leader>sw<down>  :botright new<CR>
+
 " buffer
 nmap <leader>s<left>   :leftabove  vnew<CR>
 nmap <leader>s<right>  :rightbelow vnew<CR>

@@ -43,6 +43,7 @@ iab soem       some
 iab taht       that
 iab thta       that
 iab teh        the
+iab hte        the
 iab tehy       they
 iab waht       what
 iab wiht       with

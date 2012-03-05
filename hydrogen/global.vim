@@ -57,6 +57,13 @@ set noswapfile
 " ----------------------------------------------------------------------------
 "  Auto Commands
 " ----------------------------------------------------------------------------
+au FocusLost * :silent! wall                 " Save on FocusLost
+au FocusLost * call feedkeys("\<C-\>\<C-n>") " Return to normal mode on FocustLost
+
+" Resize splits on windows resize 
+au VimResized * exe "normal! \<c-w>="
+
+"
 " Jump to last position of buffer when opening
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal g'\"" | endif

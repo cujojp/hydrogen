@@ -8,8 +8,7 @@
 
 set background=light
 set transp=5
-colorscheme eddie
-"colorscheme biogoo
+colorscheme fruit
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -
