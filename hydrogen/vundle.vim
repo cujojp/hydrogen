@@ -14,6 +14,8 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/molok/vim-smartusline'
 Bundle 'https://github.com/greyblake/vim-preview.git'
 Bundle 'https://github.com/ervandew/supertab.git'
+Bundle 'https://github.com/kien/tabman.vim.git'
+Bundle 'https://github.com/Lokaltog/vim-easymotion.git'
 
 " Libraries
 Bundle 'L9' 
@@ -47,4 +49,11 @@ Bundle 'tpope/vim-fugitive'
 
 
 filetype plugin indent on
+
+
+" ---------------------------------------------------------------------------
+" Plugin Configurations
+" ---------------------------------------------------------------------------
+let g:tabman_toggle = '<leader>mt'
+let g:tabman_focus  = '<leader>mf'
 

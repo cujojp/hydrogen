@@ -33,6 +33,10 @@ nnoremap k gk
 noremap x "_x
 noremap X "_X
 
+" reslect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
 " keep search results in the center of the screen
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
@@ -40,6 +44,9 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
+
+nnoremap <silent> ss :split<CR>
+nnoremap <silent> vv :vsplit<CR>
 
 " window
 nmap <leader>sw<left>  :topleft  vnew<CR>
