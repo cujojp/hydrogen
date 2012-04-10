@@ -8,17 +8,17 @@
 "hi Normal guibg=#202030    
 
 set background=light
-set transp=5
-colorscheme sienna
+set transp=8
+colorscheme fine_blue 
 
 "set background=dark
-"set transp=5
-"colorscheme hornet
+"set transp=2
+"colorscheme solarized
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -
 " ---------------------------------------------------------------------------
-set guifont=Inconsolata-dz:h14
+set guifont=Inconsolata-dz\ For\ Powerline:h14
 
 " ---------------------------------------------------------------------------
 " GUI                                                                       -

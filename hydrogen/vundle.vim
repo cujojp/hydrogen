@@ -11,11 +11,8 @@ call vundle#rc()
 
 " System
 Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'https://github.com/molok/vim-smartusline'
-Bundle 'https://github.com/greyblake/vim-preview.git'
 Bundle 'https://github.com/ervandew/supertab.git'
-Bundle 'https://github.com/kien/tabman.vim.git'
-Bundle 'https://github.com/Lokaltog/vim-easymotion.git'
+Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 
 " Libraries
 Bundle 'L9' 
@@ -39,9 +36,11 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'bbommarito/vim-slim.git'
+Bundle 'groenewege/vim-less.git'
 
 " Ctags
 Bundle 'https://github.com/vim-scripts/taglist.vim.git'
+
 
 " Git
 Bundle 'tpope/vim-git'
@@ -56,4 +55,12 @@ filetype plugin indent on
 " ---------------------------------------------------------------------------
 let g:tabman_toggle = '<leader>mt'
 let g:tabman_focus  = '<leader>mf'
+
+let g:Powerline_symbols = 'fancy'
+
+" Limit to 10 
+let g:CommandTMaxHeight = 10
+
+" refresh
+nmap <silent> <Leader>T :CommandTFlush<CR>
 

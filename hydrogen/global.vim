@@ -70,7 +70,7 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 au BufRead,BufNewFile *.css set ft=css syntax=css3
 au BufRead,BufNewFile *.{html,aspx,master,cshtml} set ft=html syntax=html5
-au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.{scss,less} set filetype=scss
 au BufRead,BufNewFile *.aspx set filetype=html syntax=html5
 
 " ---------------------------------------------------------------------------
