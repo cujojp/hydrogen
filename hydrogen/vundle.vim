@@ -11,8 +11,8 @@ call vundle#rc()
 
 " System
 Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'https://github.com/ervandew/supertab.git'
-Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+Bundle 'ervandew/supertab.git'
+Bundle 'Lokaltog/vim-powerline.git'
 
 " Libraries
 Bundle 'L9' 
@@ -23,11 +23,12 @@ Bundle "AutoClose"
 Bundle "repeat.vim"
 Bundle "surround.vim"
 Bundle "bufexplorer.zip"
+Bundle "chrisbra/NrrwRgn.git"
 
 " HTML
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle "https://github.com/scrooloose/nerdcommenter.git"
-Bundle "https://github.com/vim-scripts/matchit.zip.git"
+Bundle "scrooloose/nerdcommenter.git"
+Bundle "vim-scripts/matchit.zip.git"
 
 " Syntax
 Bundle 'vim-ruby/vim-ruby'
@@ -39,7 +40,7 @@ Bundle 'bbommarito/vim-slim.git'
 Bundle 'groenewege/vim-less.git'
 
 " Ctags
-Bundle 'https://github.com/vim-scripts/taglist.vim.git'
+Bundle 'vim-scripts/taglist.vim.git'
 
 
 " Git
@@ -53,9 +54,6 @@ filetype plugin indent on
 " ---------------------------------------------------------------------------
 " Plugin Configurations
 " ---------------------------------------------------------------------------
-let g:tabman_toggle = '<leader>mt'
-let g:tabman_focus  = '<leader>mf'
-
 let g:Powerline_symbols = 'fancy'
 
 " Limit to 10 
