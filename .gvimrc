@@ -7,13 +7,13 @@
 "set transp=5
 "hi Normal guibg=#202030    
 
-"set background=light
-"set transp=8
-"colorscheme fine_blue 
+set background=light
+set transp=9
+colorscheme fine_blue
 
-set background=dark
-set transp=2
-colorscheme biogoo
+"set background=dark
+"set transp=2
+"colorscheme solarized
 
 " ---------------------------------------------------------------------------
 " Font                                                                      -
