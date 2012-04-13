@@ -45,6 +45,9 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
 
+" https://twitter.com/#!/stevelosh/status/189427334259015683"
+nnoremap <leader>u :syntax sync fromstart<cr>:redraw!<cr>
+
 nnoremap <silent> ss :split<CR>
 nnoremap <silent> vv :vsplit<CR>
 

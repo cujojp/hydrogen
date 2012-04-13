@@ -1,8 +1,6 @@
 "" ---------------------------------------------------------------------------
 " Base
 " ---------------------------------------------------------------------------
-set nocompatible                             " no vi compatibility
-
 if has("autocmd")
   filetype plugin indent on
   autocmd BufReadPost *

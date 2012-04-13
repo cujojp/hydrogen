@@ -9,5 +9,5 @@ set fuoptions=maxvert,maxhorz
 
 set background=light
 set transp=9
-colorscheme fine_blue
+colorscheme rainbow_sea
 
