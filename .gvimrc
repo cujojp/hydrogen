@@ -7,7 +7,7 @@ set showtabline=2 "2 enables tabs
 set antialias
 set fuoptions=maxvert,maxhorz
 
-set background=light
-set transp=9
-colorscheme rainbow_sea
+set background=dark
+set transp=4
+colorscheme leo
 

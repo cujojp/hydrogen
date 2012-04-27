@@ -25,10 +25,11 @@ Bundle "surround.vim"
 Bundle "bufexplorer.zip"
 Bundle "chrisbra/NrrwRgn.git"
 
-" HTML
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" HTML / CSS
+Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle "scrooloose/nerdcommenter.git"
 Bundle "vim-scripts/matchit.zip.git"
+Bundle "skammer/vim-css-color.git"
 
 " Syntax
 Bundle 'vim-ruby/vim-ruby'
@@ -62,3 +63,5 @@ let g:CommandTMaxHeight = 10
 " refresh
 nmap <silent> <Leader>T :CommandTFlush<CR>
 
+
+let g:sparkupExecuteMapping = '<leader>e'
