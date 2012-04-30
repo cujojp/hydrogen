@@ -2,7 +2,6 @@
 " Keymappings
 " ---------------------------------------------------------------------------
 let mapleader = ","
-let g:sparkupExecuteMapping = '<leader>e'
 
 " Source the .vimrc and .gvimrc at once
 nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
@@ -25,6 +24,9 @@ map <Leader>m :%s/^M//<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 noremap <leader>ss :call StripWhitespace()<CR>
 
+" match bracket on tab
+nmap <tab> %
+
 " better j/k overwrapped lines
 nnoremap j gj
 nnoremap k gk
@@ -44,9 +46,6 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
-
-" https://twitter.com/#!/stevelosh/status/189427334259015683"
-nnoremap <leader><leader>r :syntax sync fromstart<cr>:redraw!<cr>
 
 nnoremap <silent> ss :split<CR>
 nnoremap <silent> vv :vsplit<CR>
@@ -68,11 +67,15 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
 " source: http://mislav.uniqpath.com/2011/12/vim-revisited/
-
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-                                                                               
+" ---------------------------------------------------------------------------
+" Plugin Mappings
+" ---------------------------------------------------------------------------
+let g:Powerline_symbols = 'fancy'
+let g:ctrlp_map = '<leader>f'
+let g:sparkupExecuteMapping = '<leader>e'
+
+nmap <leader>t :TagbarToggle<CR>

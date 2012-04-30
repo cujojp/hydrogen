@@ -12,6 +12,22 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
 endif   
+
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '--include-vars',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
 " ---------------------------------------------------------------------------
 " General
 " ---------------------------------------------------------------------------
