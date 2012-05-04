@@ -8,7 +8,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 
 map <leader><space> zf
 map <leader><S-space> zo
-map <leader>n :e.<CR>
 map <leader>= <c-W>=
 map <leader><leader> <c-W><c-W>
 map <leader>C :call OpenConfig()<CR>
@@ -61,10 +60,6 @@ nmap <leader>s<left>   :leftabove  vnew<CR>
 nmap <leader>s<right>  :rightbelow vnew<CR>
 nmap <leader>s<up>     :leftabove  new<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
-
-" CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-map <C-\> :tnext<CR>
 
 " source: http://mislav.uniqpath.com/2011/12/vim-revisited/
 " double percentage sign in command mode is expanded

@@ -13,15 +13,12 @@ Bundle 'ervandew/supertab.git'
 Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
-Bundle "ragtag.vim"
-Bundle "AutoClose"
-Bundle "repeat.vim"
-Bundle "surround.vim"
-Bundle "bufexplorer.zip"
+Bundle 'surround.vim'
+Bundle 'c9s/bufexplorer'
 Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
-Bundle "scrooloose/nerdcommenter.git"
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'scrooloose/nerdtree.git'
 Bundle 'mirell/vim-matchit'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'leshill/vim-json'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
