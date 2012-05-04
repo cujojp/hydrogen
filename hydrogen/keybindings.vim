@@ -9,6 +9,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR> :so $MYGVIMRC<CR>
 map <leader><space> zf
 map <leader><S-space> zo
 map <leader>= <c-W>=
+map <leader>n :NERDTree<cr> 
 map <leader><leader> <c-W><c-W>
 map <leader>C :call OpenConfig()<CR>
 map K <nop>
@@ -72,5 +73,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 let g:Powerline_symbols = 'fancy'
 let g:ctrlp_map = '<leader>f'
 let g:sparkupExecuteMapping = '<leader>e'
+let NERDTreeMinimalUI= 1
+let NERDTreeQuitOnOpen = 1
 
 nmap <leader>t :TagbarToggle<CR>
