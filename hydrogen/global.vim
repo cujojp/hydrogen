@@ -68,6 +68,13 @@ set dictionary=/usr/share/dict/words         " more words
 set nowritebackup
 set noswapfile
 
+set wildmode=full "complete first full match
+set wildignore=*.dll,*.exe,*.pyc,*.pyo,*.egg,*.class
+set wildignore+=*.jpg,*.gif,*.png,*.o,*.obj,*.bak,*.rbc
+set wildignore+=Icon*,\.DS_Store,*.out,*.scssc,*.sassc
+set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
+set wildmenu "show completion matches above command line
+
 " ----------------------------------------------------------------------------
 "  Auto Commands
 " ----------------------------------------------------------------------------
