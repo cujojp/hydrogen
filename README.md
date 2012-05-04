@@ -1,7 +1,7 @@
 Hydrogen: Vim configuration
 =======
 
-> The simplest basic building block is a solid editor.
+> The simplest building block is a solid editor.
 
 How to install Hydrogen
 -----------------------
