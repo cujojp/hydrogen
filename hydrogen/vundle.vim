@@ -17,7 +17,6 @@ Bundle 'surround.vim'
 Bundle 'c9s/bufexplorer'
 Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'scrooloose/nerdtree.git'
 Bundle 'mirell/vim-matchit'
 Bundle 'leshill/vim-json'
 Bundle 'pangloss/vim-javascript'
