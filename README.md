@@ -54,11 +54,6 @@ The premier commenting tool.
 
 **Bound to:** `c<space>`
 
-#### [nerdtree](https://github.com/scrooloose/nerdtree)
-A tree explorer plugin for vim
-
-**Bound to:** `,n`
-
 #### [supertab](https://github.com/ervandew/supertab)
 Perform all your vim insert mode completions with Tab.
 

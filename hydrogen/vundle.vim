@@ -19,6 +19,7 @@ Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'mirell/vim-matchit'
 Bundle 'leshill/vim-json'
+Bundle 'vim-scripts/netrw.vim.git'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'bbommarito/vim-slim.git'
