@@ -26,8 +26,7 @@ Bundle 'bbommarito/vim-slim.git'
 Bundle 'groenewege/vim-less.git'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
+Bundle 'nathanaelkane/vim-indent-guides.git'
 
 
 filetype plugin indent on
-
-
