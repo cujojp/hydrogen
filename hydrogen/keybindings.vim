@@ -18,6 +18,10 @@ map L $
 map T <C-v>
 imap <S-space> <Esc>
 
+" Add empty lines with no insert mode
+map <S-enter> O<Esc>
+map <enter> o<Esc>
+
 " remove windows character returns
 map <Leader>m :%s/^M//<CR>
 
