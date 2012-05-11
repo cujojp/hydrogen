@@ -54,6 +54,11 @@ The premier commenting tool.
 
 **Bound to:** `c<space>`
 
+#### [indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
+A Vim plugin for visually displaying indent levels in code
+
+**Bound to:** `<leader>ig`
+
 #### [supertab](https://github.com/ervandew/supertab)
 Perform all your vim insert mode completions with Tab.
 
