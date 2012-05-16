@@ -54,6 +54,16 @@ The premier commenting tool.
 
 **Bound to:** `c<space>`
 
+#### [easymotion](https://github.com/Lokaltog/vim-easymotion)
+Vim motions on speed! 
+
+**Bound to:** `,,w` `,,t`
+
+#### [ack](https://github.com/mileszs/ack.vim)
+Vim plugin for the Perl module / CLI script 'ack
+
+**Called by:** `:Ack`
+
 #### [indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
 A Vim plugin for visually displaying indent levels in code
 

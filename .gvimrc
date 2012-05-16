@@ -7,7 +7,7 @@ set showtabline=2 "2 enables tabs
 set antialias
 set fuoptions=maxvert,maxhorz
 
-set background=dark
-set transp=1
+"set background=dark
+"set transp=1
 colorscheme elrodeo
 

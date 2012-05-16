@@ -20,13 +20,15 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'mirell/vim-matchit'
 Bundle 'leshill/vim-json'
 Bundle 'vim-scripts/netrw.vim.git'
+Bundle 'nathanaelkane/vim-indent-guides.git'
+Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mileszs/ack.vim.git'
 Bundle 'bbommarito/vim-slim.git'
 Bundle 'groenewege/vim-less.git'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
-Bundle 'nathanaelkane/vim-indent-guides.git'
 
 
 filetype plugin indent on
