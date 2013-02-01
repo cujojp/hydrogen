@@ -66,6 +66,9 @@ nmap <leader>s<right>  :rightbelow vnew<CR>
 nmap <leader>s<up>     :leftabove  new<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
 
+" NERDTree
+map <leader>n :NERDTreeToggle<CR>
+
 " source: http://mislav.uniqpath.com/2011/12/vim-revisited/
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
